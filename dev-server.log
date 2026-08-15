@@ -1,0 +1,15 @@
+
+> realestate-task@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 4832, using available port 3001 instead.
+▲ Next.js 16.3.1 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.100.11:3001
+✓ Ready in 2.2s
+✓ Running next.config.ts took 112ms
+Creating turbopack project {
+  dir: 'C:\\Users\\Zulfiqar Ali\\OneDrive\\Desktop\\realestate-task',
+  testMode: true
+}
+

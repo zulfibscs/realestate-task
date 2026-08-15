@@ -4,8 +4,7 @@ const defaultAgent: Property["agent"] = {
   name: "William Walton-Dean",
   phone: "(478) 371-7069",
   email: "william@waltondeanrealty.com",
-  photo:
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+  photo: "/properties/agent-placeholder.svg",
 };
 
 export const properties: Property[] = [

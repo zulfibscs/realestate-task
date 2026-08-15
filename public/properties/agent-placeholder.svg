@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">Agent portrait placeholder</title>
+  <desc id="desc">A simple professional portrait placeholder for the listing agent.</desc>
+  <rect width="400" height="400" fill="#e8dcc4"/>
+  <circle cx="200" cy="145" r="72" fill="#1b2a41"/>
+  <path d="M80 355 C98 270 145 232 200 232 C255 232 302 270 320 355 Z" fill="#3d4f63"/>
+  <path d="M125 355 C145 305 170 282 200 282 C230 282 255 305 275 355 Z" fill="#fafaf8" opacity="0.9"/>
+  <path d="M150 165 C170 205 230 205 250 165" fill="none" stroke="#c4a962" stroke-width="12" stroke-linecap="round"/>
+</svg>
