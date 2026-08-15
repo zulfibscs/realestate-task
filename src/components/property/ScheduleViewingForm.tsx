@@ -59,6 +59,10 @@ function validateScheduleForm(form: ScheduleFormState): ScheduleFormErrors {
     errors.preferredTime = "Please choose a preferred time.";
   }
 
+  if (form.message.trim().length < 10) {
+    errors.message = "Please add a short note about the viewing.";
+  }
+
   return errors;
 }
 
@@ -114,6 +118,7 @@ export default function ScheduleViewingForm({
     setSuccessMessage(
       `Your viewing request for ${title} has been received.`
     );
+    // Focus the live confirmation so the simulated submission is announced after validation passes.
     window.setTimeout(() => successRef.current?.focus(), 0);
   };
 
@@ -266,8 +271,20 @@ export default function ScheduleViewingForm({
             rows={4}
             value={formState.message}
             onChange={(event) => updateField("message", event.target.value)}
+            aria-invalid={errors.message ? "true" : "false"}
+            aria-describedby={
+              errors.message ? "schedule-message-error" : undefined
+            }
             className={fieldClassName}
           />
+          {errors.message ? (
+            <p
+              id="schedule-message-error"
+              className="mt-2 text-sm text-red-700"
+            >
+              {errors.message}
+            </p>
+          ) : null}
         </div>
       </div>
 
@@ -282,6 +299,8 @@ export default function ScheduleViewingForm({
         <p
           ref={successRef}
           tabIndex={-1}
+          role="status"
+          aria-live="polite"
           className="mt-5 rounded-sm border border-[#2D6A4F]/30 bg-[#2D6A4F]/10 px-4 py-3 text-sm font-medium text-[#2D6A4F] focus:outline-none"
         >
           {successMessage}

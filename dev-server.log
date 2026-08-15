@@ -13,3 +13,106 @@ Creating turbopack project {
   testMode: true
 }
 
+ GET / 200 in 1477ms (next.js: 742ms, application-code: 735ms)
+ GET /properties 200 in 201ms (next.js: 93ms, application-code: 108ms)
+ GET /properties/prop-001 200 in 3.1s (next.js: 1581ms, generate-params: 1398ms, application-code: 100ms)
+ GET /contact?property=prop-001 200 in 1001ms (next.js: 876ms, application-code: 125ms)
+ GET /contact 200 in 53ms (next.js: 13ms, application-code: 40ms)
+ GET /about 200 in 726ms (next.js: 655ms, application-code: 71ms)
+ GET /contact 200 in 141ms (next.js: 46ms, application-code: 95ms)
+ GET /properties 200 in 75ms (next.js: 20ms, application-code: 55ms)
+ GET / 200 in 89ms (next.js: 19ms, application-code: 69ms)
+ GET /contact 200 in 53ms (next.js: 12ms, application-code: 41ms)
+ GET / 200 in 314ms (next.js: 22ms, application-code: 292ms)
+ GET /properties 200 in 54ms (next.js: 12ms, application-code: 42ms)
+ GET /contact 200 in 84ms (next.js: 14ms, application-code: 70ms)
+ GET / 200 in 99ms (next.js: 13ms, application-code: 86ms)
+ GET / 200 in 28ms (next.js: 13ms, application-code: 15ms)
+ GET / 200 in 78ms (next.js: 10ms, application-code: 68ms)
+ GET / 200 in 23ms (next.js: 9ms, application-code: 14ms)
+ GET / 200 in 112ms (next.js: 14ms, application-code: 98ms)
+ GET / 200 in 84ms (next.js: 12ms, application-code: 73ms)
+ GET / 200 in 83ms (next.js: 10ms, application-code: 73ms)
+ GET / 200 in 71ms (next.js: 12ms, application-code: 59ms)
+ GET / 200 in 85ms (next.js: 10ms, application-code: 75ms)
+ GET /properties 200 in 54ms (next.js: 16ms, application-code: 37ms)
+ GET / 200 in 81ms (next.js: 12ms, application-code: 70ms)
+ GET / 200 in 75ms (next.js: 11ms, application-code: 64ms)
+ GET /properties/prop-001 200 in 86ms (next.js: 16ms, generate-params: 14ms, application-code: 56ms)
+ GET /contact?property=prop-001 200 in 46ms (next.js: 10ms, application-code: 36ms)
+ GET /about 200 in 81ms (next.js: 14ms, application-code: 68ms)
+ GET /contact 200 in 53ms (next.js: 11ms, application-code: 42ms)
+ GET / 200 in 81ms (next.js: 13ms, application-code: 68ms)
+ GET / 200 in 168ms (next.js: 14ms, application-code: 155ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_fe8b...">
+                          <body
+                            className="flex min-h-full flex-col bg-[#FAFAF8] font-sans text-[#3D4F63]"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+ GET / 200 in 261ms (next.js: 25ms, application-code: 236ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_fe8b...">
+                          <body
+                            className="flex min-h-full flex-col bg-[#FAFAF8] font-sans text-[#3D4F63]"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+ GET / 200 in 244ms (next.js: 12ms, application-code: 232ms)

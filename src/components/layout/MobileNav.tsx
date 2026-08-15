@@ -56,7 +56,8 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
         aria-expanded={isOpen}
         aria-controls={menuId}
         aria-label={isOpen ? "Close menu" : "Open menu"}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[#E8DCC4] transition-colors hover:bg-[#3D4F63]/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
+        // A 44px target keeps the mobile menu button comfortable to tap at 375px and 425px widths.
+        className="inline-flex h-11 w-11 items-center justify-center rounded-sm text-[#E8DCC4] transition-colors hover:bg-[#3D4F63]/50 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
         onClick={() => setIsOpen((open) => !open)}
       >
         <span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
@@ -86,12 +87,12 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
 
       {isOpen ? (
         <>
-          <button
-            type="button"
-            aria-label="Close menu overlay"
-            className="fixed inset-0 top-16 z-40 bg-[#2C2C2C]/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
-            onClick={closeMenu}
-          />
+            <button
+              type="button"
+              aria-label="Close menu overlay"
+              className="fixed inset-0 top-16 z-40 bg-[#2C2C2C]/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
+              onClick={closeMenu}
+            />
           <nav
             id={menuId}
             aria-label="Mobile navigation"

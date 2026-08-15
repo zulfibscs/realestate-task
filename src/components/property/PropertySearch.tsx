@@ -111,6 +111,7 @@ export default function PropertySearch({
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             <div className="md:col-span-2 lg:col-span-4">
               <span className={labelClassName}>Listing Type</span>
+              {/* These segmented buttons need the same 44px touch height on compact screens so the filter stays easy to use. */}
               <div className="flex flex-wrap gap-2">
                 {(
                   [
@@ -124,7 +125,7 @@ export default function PropertySearch({
                     type="button"
                     aria-pressed={formState.listingType === value}
                     onClick={() => updateField("listingType", value)}
-                    className={`rounded-sm px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962] ${
+                    className={`min-h-11 rounded-sm px-4 py-3 text-sm font-semibold uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962] ${
                       formState.listingType === value
                         ? "bg-[#1B2A41] text-white"
                         : "border border-[#E8DCC4]/80 bg-[#FAFAF8] text-[#3D4F63] hover:border-[#C4A962]"
@@ -244,17 +245,18 @@ export default function PropertySearch({
           </div>
         </fieldset>
 
+        {/* The action row uses 44px minimum height so the primary filters are easy to tap on mobile. */}
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <button
             type="submit"
-            className="rounded-sm bg-[#C4A962] px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41]"
+            className="min-h-11 rounded-sm bg-[#C4A962] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41]"
           >
             Search
           </button>
           <button
             type="button"
             onClick={handleReset}
-            className="rounded-sm border border-[#E8DCC4]/80 bg-[#FAFAF8] px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-[#3D4F63] transition-colors hover:border-[#C4A962] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
+            className="min-h-11 rounded-sm border border-[#E8DCC4]/80 bg-[#FAFAF8] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#3D4F63] transition-colors hover:border-[#C4A962] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
           >
             Reset Filters
           </button>

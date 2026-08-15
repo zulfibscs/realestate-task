@@ -94,6 +94,7 @@ export default function ContactForm() {
     setSuccessMessage(
       "Thanks for reaching out. We will follow up with you shortly."
     );
+    // Focus the confirmation message so screen reader users hear the simulated success state immediately.
     window.setTimeout(() => successRef.current?.focus(), 0);
   };
 
@@ -206,6 +207,8 @@ export default function ContactForm() {
         <p
           ref={successRef}
           tabIndex={-1}
+          role="status"
+          aria-live="polite"
           className="mt-5 rounded-sm border border-[#2D6A4F]/30 bg-[#2D6A4F]/10 px-4 py-3 text-sm font-medium text-[#2D6A4F] focus:outline-none"
         >
           {successMessage}

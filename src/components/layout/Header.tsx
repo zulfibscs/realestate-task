@@ -43,7 +43,7 @@ export default function Header() {
         <div className="hidden items-center md:flex">
           <Link
             href="/contact"
-            className="rounded-sm bg-[#C4A962] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="rounded-sm bg-[#C4A962] px-5 py-3 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Schedule a Viewing
           </Link>

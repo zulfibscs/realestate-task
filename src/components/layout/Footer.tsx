@@ -78,13 +78,14 @@ export default function Footer() {
             <h2 className="text-sm font-semibold uppercase tracking-wide text-white">
               Follow Us
             </h2>
+            {/* The social placeholders use 44px targets so keyboard and touch users can reach them comfortably. */}
             <ul className="mt-4 flex flex-wrap gap-3">
               {socialLinks.map(({ href, label }) => (
                 <li key={label}>
                   <a
                     href={href}
                     aria-label={label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-[#E8DCC4]/30 text-xs font-semibold uppercase transition-colors hover:border-[#C4A962] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border border-[#E8DCC4]/30 text-xs font-semibold uppercase transition-colors hover:border-[#C4A962] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
                   >
                     {label.slice(0, 2)}
                   </a>
