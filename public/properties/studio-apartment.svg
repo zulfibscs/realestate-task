@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Studio apartment building</title>
+  <desc id="desc">A compact modern apartment building with warm windows and city landscaping.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#5e7894"/>
+      <stop offset="0.55" stop-color="#b7c4c8"/>
+      <stop offset="1" stop-color="#f5eee1"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" x2="1">
+      <stop offset="0" stop-color="#6f7f67"/>
+      <stop offset="1" stop-color="#b1a56d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <path d="M0 640 C210 600 390 650 575 680 C785 713 980 660 1200 615 L1200 800 L0 800 Z" fill="url(#ground)"/>
+  <path d="M315 220 H885 V665 H315 Z" fill="#f7f0e4"/>
+  <path d="M370 280 H475 V380 H370 Z M548 280 H653 V380 H548 Z M725 280 H830 V380 H725 Z M370 440 H475 V540 H370 Z M548 440 H653 V540 H548 Z M725 440 H830 V540 H725 Z" fill="#86a8c4"/>
+  <path d="M548 555 H653 V665 H548 Z" fill="#1b2a41"/>
+  <path d="M290 215 H910" stroke="#24364f" stroke-width="28" stroke-linecap="round"/>
+  <path d="M265 665 H935" stroke="#e8dcc4" stroke-width="22" stroke-linecap="round"/>
+  <path d="M190 700 C315 660 470 720 600 690 C750 655 880 690 1010 670" fill="none" stroke="#fafaf8" stroke-width="22" stroke-linecap="round"/>
+</svg>

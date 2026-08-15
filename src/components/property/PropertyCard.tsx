@@ -79,6 +79,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
             src={property.images[0]}
             alt={property.title}
             fill
+            unoptimized
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
@@ -115,6 +116,10 @@ export default function PropertyCard({ property }: PropertyCardProps) {
               <span>{formatArea(property.area)}</span>
             </li>
           </ul>
+
+          <span className="mt-5 inline-flex text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors group-hover:text-[#C4A962]">
+            View Details
+          </span>
         </div>
       </Link>
     </article>

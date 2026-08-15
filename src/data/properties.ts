@@ -58,8 +58,7 @@ export const properties: Property[] = [
     ],
     amenities: ["Central heating", "Ceiling fans", "Storage shed"],
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6162a9a0a9?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop",
+      "/properties/renovated-ranch.svg",
     ],
     agent: defaultAgent,
     featured: true,
@@ -85,8 +84,7 @@ export const properties: Property[] = [
     ],
     amenities: ["HOA pool", "Clubhouse", "Landscaping included"],
     images: [
-      "https://images.unsplash.com/photo-1605276374102-40a346b148db?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&h=800&fit=crop",
+      "/properties/luxury-townhome.svg",
     ],
     agent: defaultAgent,
     featured: true,
@@ -268,7 +266,7 @@ export const properties: Property[] = [
     ],
     amenities: ["Lawn care included", "Off-street parking", "Storage attic"],
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6162a9a0a9?w=1200&h=800&fit=crop",
+      "/properties/pet-friendly-rental.svg",
     ],
     agent: defaultAgent,
     featured: true,
@@ -338,7 +336,7 @@ export const properties: Property[] = [
     ],
     amenities: ["Water included", "On-site management", "Bike storage"],
     images: [
-      "https://images.unsplash.com/photo-1536376072261-38c8d6a5d7f5?w=1200&h=800&fit=crop",
+      "/properties/studio-apartment.svg",
     ],
     agent: defaultAgent,
     featured: false,

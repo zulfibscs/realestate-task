@@ -1,13 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
-import PropertyCard from "@/components/property/PropertyCard";
-import { filterProperties } from "@/lib/filterProperties";
-import type { ListingType, Property, PropertyFilters, PropertyType } from "@/types/property";
+import type {
+  ListingType,
+  PropertyFilters,
+  PropertyType,
+} from "@/types/property";
 
 type PropertySearchProps = {
-  properties: Property[];
+  onSearch: (filters: PropertyFilters) => void;
+  onReset: () => void;
 };
 
 type SearchFormState = {
@@ -69,27 +72,24 @@ const labelClassName =
   "mb-1.5 block text-sm font-medium text-[#1B2A41]";
 
 /*
- * PropertySearch only manages filter state and delegates the actual filtering to
- * filterProperties(), keeping this component swappable for a future API-backed
- * search without rewriting the UI.
+ * PropertySearch owns only the interactive controls, while the parent listing
+ * view decides how filtered properties are presented. That keeps the search UI
+ * reusable and makes it easy to swap in API-backed data later.
  */
-export default function PropertySearch({ properties }: PropertySearchProps) {
+export default function PropertySearch({
+  onSearch,
+  onReset,
+}: PropertySearchProps) {
   const [formState, setFormState] = useState<SearchFormState>(initialFormState);
-  const [appliedFilters, setAppliedFilters] = useState<PropertyFilters>({});
-
-  const results = useMemo(
-    () => filterProperties(properties, appliedFilters),
-    [properties, appliedFilters]
-  );
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setAppliedFilters(formStateToFilters(formState));
+    onSearch(formStateToFilters(formState));
   };
 
   const handleReset = () => {
     setFormState(initialFormState);
-    setAppliedFilters({});
+    onReset();
   };
 
   const updateField = <K extends keyof SearchFormState>(
@@ -260,30 +260,6 @@ export default function PropertySearch({ properties }: PropertySearchProps) {
           </button>
         </div>
       </form>
-
-      <p className="mt-8 text-sm font-medium text-[#3D4F63]">
-        Showing {results.length} of {properties.length} properties
-      </p>
-
-      {results.length === 0 ? (
-        <div className="mt-8 rounded-sm border border-dashed border-[#E8DCC4] bg-white px-6 py-12 text-center">
-          <p className="font-serif text-xl font-semibold text-[#1B2A41]">
-            No properties match your filters
-          </p>
-          <p className="mt-2 text-sm text-[#6B7280]">
-            Try adjusting your search criteria or reset filters to see all
-            listings.
-          </p>
-        </div>
-      ) : (
-        <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {results.map((property) => (
-            <li key={property.id}>
-              <PropertyCard property={property} />
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 }

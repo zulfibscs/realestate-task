@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Renovated ranch home</title>
+  <desc id="desc">A warm illustration of a single-level ranch home with a lawn and evening sky.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8fb6d8"/>
+      <stop offset="0.55" stop-color="#d8c49d"/>
+      <stop offset="1" stop-color="#f3efe5"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" x2="1">
+      <stop offset="0" stop-color="#617a47"/>
+      <stop offset="1" stop-color="#9aa76d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="980" cy="130" r="70" fill="#f7d782" opacity="0.85"/>
+  <path d="M0 585 C180 535 380 560 550 610 C760 670 980 610 1200 555 L1200 800 L0 800 Z" fill="url(#grass)"/>
+  <path d="M190 405 L565 250 L1015 405 Z" fill="#6d3d2b"/>
+  <path d="M255 405 H950 V650 H255 Z" fill="#f6efe2"/>
+  <path d="M315 455 H455 V650 H315 Z" fill="#32455c"/>
+  <path d="M530 455 H660 V550 H530 Z M730 455 H860 V550 H730 Z" fill="#86a8c4"/>
+  <path d="M315 455 H455 V478 H315 Z M530 455 H660 V478 H530 Z M730 455 H860 V478 H730 Z" fill="#c4a962"/>
+  <path d="M220 650 H990" stroke="#d7c8aa" stroke-width="22" stroke-linecap="round"/>
+  <path d="M90 700 C250 665 370 695 530 720 C735 752 915 704 1110 680" fill="none" stroke="#e8dcc4" stroke-width="26" stroke-linecap="round"/>
+</svg>

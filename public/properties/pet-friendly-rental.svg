@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Pet friendly rental home</title>
+  <desc id="desc">A cozy rental house with a fenced yard and bright afternoon sky.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#91b7d2"/>
+      <stop offset="0.65" stop-color="#eadab9"/>
+      <stop offset="1" stop-color="#fafaf8"/>
+    </linearGradient>
+    <linearGradient id="yard" x1="0" x2="1">
+      <stop offset="0" stop-color="#5f7f4a"/>
+      <stop offset="1" stop-color="#a7b676"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <path d="M0 570 C180 535 360 570 520 610 C760 670 980 620 1200 560 L1200 800 L0 800 Z" fill="url(#yard)"/>
+  <path d="M220 402 L590 240 L970 402 Z" fill="#8a5137"/>
+  <path d="M285 402 H915 V642 H285 Z" fill="#fff6e6"/>
+  <path d="M350 465 H470 V555 H350 Z M715 465 H835 V555 H715 Z" fill="#84a8c2"/>
+  <path d="M535 475 H655 V642 H535 Z" fill="#1b2a41"/>
+  <path d="M130 620 H1070" stroke="#b9905e" stroke-width="18" stroke-linecap="round"/>
+  <path d="M150 570 V685 M260 570 V685 M370 570 V685 M480 570 V685 M590 570 V685 M700 570 V685 M810 570 V685 M920 570 V685 M1030 570 V685" stroke="#b9905e" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="745" cy="663" r="26" fill="#2c2c2c"/>
+  <circle cx="720" cy="640" r="10" fill="#2c2c2c"/>
+  <circle cx="770" cy="640" r="10" fill="#2c2c2c"/>
+  <circle cx="722" cy="684" r="10" fill="#2c2c2c"/>
+  <circle cx="768" cy="684" r="10" fill="#2c2c2c"/>
+</svg>
