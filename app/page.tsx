@@ -1,5 +1,6 @@
 import About from "@/components/sections/About";
 import ContactCTA from "@/components/sections/ContactCTA";
+import FeaturedProperties from "@/components/sections/FeaturedProperties";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Stats from "@/components/sections/Stats";
@@ -12,6 +13,7 @@ export default function Home() {
       <Stats />
       <About />
       <Services />
+      <FeaturedProperties />
       <Testimonials />
       <ContactCTA />
     </main>
