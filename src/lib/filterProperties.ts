@@ -28,6 +28,20 @@ export function filterProperties(
       return false;
     }
 
+    if (
+      filters.propertyTypes?.length &&
+      !filters.propertyTypes.includes(property.propertyType)
+    ) {
+      return false;
+    }
+
+    if (
+      filters.statuses?.length &&
+      !filters.statuses.includes(property.status ?? "Active")
+    ) {
+      return false;
+    }
+
     if (filters.minPrice !== undefined && property.price < filters.minPrice) {
       return false;
     }
@@ -48,6 +62,88 @@ export function filterProperties(
       property.bathrooms < filters.bathrooms
     ) {
       return false;
+    }
+
+    if (filters.minArea !== undefined && property.area < filters.minArea) {
+      return false;
+    }
+
+    if (filters.maxArea !== undefined && property.area > filters.maxArea) {
+      return false;
+    }
+
+    if (
+      filters.minLotSize !== undefined &&
+      (property.lotSizeAcres ?? 0) < filters.minLotSize
+    ) {
+      return false;
+    }
+
+    if (
+      filters.maxLotSize !== undefined &&
+      (property.lotSizeAcres ?? 0) > filters.maxLotSize
+    ) {
+      return false;
+    }
+
+    if (
+      filters.minYearBuilt !== undefined &&
+      (property.yearBuilt ?? 0) < filters.minYearBuilt
+    ) {
+      return false;
+    }
+
+    if (
+      filters.maxYearBuilt !== undefined &&
+      (property.yearBuilt ?? new Date().getFullYear()) > filters.maxYearBuilt
+    ) {
+      return false;
+    }
+
+    if (
+      filters.garageSpaces !== undefined &&
+      (property.garageSpaces ?? 0) < filters.garageSpaces
+    ) {
+      return false;
+    }
+
+    if (
+      filters.stories !== undefined &&
+      (property.stories ?? 1) < filters.stories
+    ) {
+      return false;
+    }
+
+    if (filters.openHouse && !property.openHouse) {
+      return false;
+    }
+
+    if (
+      filters.amenities?.length &&
+      !filters.amenities.every((amenity) =>
+        property.amenities.some((propertyAmenity) =>
+          propertyAmenity.toLowerCase().includes(amenity.toLowerCase())
+        )
+      )
+    ) {
+      return false;
+    }
+
+    if (filters.keyword) {
+      const haystack = [
+        property.title,
+        property.location,
+        property.propertyType,
+        property.description,
+        ...property.features,
+        ...property.amenities,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      if (!haystack.includes(filters.keyword.toLowerCase())) {
+        return false;
+      }
     }
 
     return true;

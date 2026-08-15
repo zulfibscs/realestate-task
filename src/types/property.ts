@@ -5,7 +5,16 @@ export type PropertyType =
   | "Condo"
   | "Townhouse"
   | "Apartment"
-  | "Villa";
+  | "Villa"
+  | "Residential"
+  | "Co-op"
+  | "Multi-family"
+  | "Commercial"
+  | "Manufactured"
+  | "Land"
+  | "Other";
+
+export type ListingStatus = "Active" | "Pending" | "Sold";
 
 export interface PropertyAgent {
   name: string;
@@ -21,9 +30,16 @@ export interface Property {
   listingType: ListingType;
   location: string;
   propertyType: PropertyType;
+  status?: ListingStatus;
+  mlsNumber?: string;
   bedrooms: number;
   bathrooms: number;
   area: number;
+  lotSizeAcres?: number;
+  yearBuilt?: number;
+  garageSpaces?: number;
+  stories?: number;
+  openHouse?: boolean;
   description: string;
   features: string[];
   amenities: string[];
@@ -36,8 +52,21 @@ export interface PropertyFilters {
   listingType?: ListingType;
   location?: string;
   propertyType?: PropertyType;
+  propertyTypes?: PropertyType[];
+  statuses?: ListingStatus[];
   minPrice?: number;
   maxPrice?: number;
   bedrooms?: number;
   bathrooms?: number;
+  minArea?: number;
+  maxArea?: number;
+  minLotSize?: number;
+  maxLotSize?: number;
+  minYearBuilt?: number;
+  maxYearBuilt?: number;
+  garageSpaces?: number;
+  stories?: number;
+  openHouse?: boolean;
+  amenities?: string[];
+  keyword?: string;
 }

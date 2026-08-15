@@ -2,7 +2,9 @@ import Link from "next/link";
 
 const quickLinks = [
   { href: "/", label: "Home" },
-  { href: "/properties", label: "Properties" },
+  { href: "/#featured-properties-heading", label: "Portfolio" },
+  { href: "/#neighborhoods-heading", label: "Neighborhoods" },
+  { href: "/listings", label: "Home Search" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -19,6 +21,17 @@ export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[#E8DCC4]/30 bg-[#1B2A41] text-[#E8DCC4]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-10 grid gap-3 border-b border-[#E8DCC4]/20 pb-8 sm:grid-cols-3">
+          {["WD Realty", "real", "Equal Housing"].map((label) => (
+            <div
+              key={label}
+              className="flex min-h-16 items-center justify-center rounded-sm border border-[#E8DCC4]/25 bg-white/5 px-4 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white"
+            >
+              {label}
+            </div>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-serif text-xl font-semibold text-white">
@@ -76,9 +89,17 @@ export default function Footer() {
 
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wide text-white">
-              Follow Us
+              Reviews
             </h2>
-            {/* The social placeholders use 44px targets so keyboard and touch users can reach them comfortably. */}
+            <div className="mt-4 rounded-sm border border-[#E8DCC4]/25 bg-white/5 p-4">
+              <p className="font-serif text-2xl font-semibold text-white">
+                5.0 Stars
+              </p>
+              <p className="mt-1 text-sm text-[#E8DCC4]/85">
+                Client-rated local guidance for Houston County buyers and
+                sellers.
+              </p>
+            </div>
             <ul className="mt-4 flex flex-wrap gap-3">
               {socialLinks.map(({ href, label }) => (
                 <li key={label}>
@@ -95,8 +116,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[#E8DCC4]/20 pt-6 text-center text-sm text-[#E8DCC4]/70 sm:text-left">
-          <p>&copy; {year} Walton Dean Realty. All rights reserved.</p>
+        <div className="mt-10 border-t border-[#E8DCC4]/20 pt-6 text-sm leading-relaxed text-[#E8DCC4]/70">
+          <p>
+            Information is deemed reliable but not guaranteed. Mock listing data
+            is provided for demonstration purposes only and is not an offer of
+            brokerage services or MLS representation.
+          </p>
+          <p className="mt-4">
+            &copy; {year} Walton Dean Realty. All rights reserved. Powered by a
+            Next.js property search experience. Equal Housing Opportunity.
+          </p>
         </div>
       </div>
     </footer>

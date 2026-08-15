@@ -28,9 +28,9 @@ const initialState: ScheduleFormState = {
 };
 
 const fieldClassName =
-  "w-full rounded-sm border border-[#E8DCC4]/80 bg-white px-3 py-2.5 text-sm text-[#2C2C2C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]";
+  "w-full rounded-sm border border-[#D9D0BC] bg-white px-4 py-3 text-sm text-[#2C2C2C] shadow-sm outline-none transition-colors focus:border-[#102033] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]";
 
-const labelClassName = "mb-1.5 block text-sm font-medium text-[#1B2A41]";
+const labelClassName = "mb-2 block text-sm font-semibold text-[#102033]";
 
 function validateEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -126,11 +126,11 @@ export default function ScheduleViewingForm({
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-sm border border-[#E8DCC4]/60 bg-white p-6"
+      className="rounded-sm border border-[#E8DCC4]/70 bg-white p-5 shadow-[0_18px_60px_rgba(16,32,51,0.08)] sm:p-7"
     >
       <input type="hidden" name="propertyId" value={propertyId} />
 
-      <div className="mb-6 rounded-sm bg-[#FAFAF8] px-4 py-3">
+      <div className="mb-7 rounded-sm border border-[#E8DCC4]/70 bg-[#FAFAF8] px-4 py-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-[#6B7280]">
           Requested Property
         </p>
@@ -290,7 +290,7 @@ export default function ScheduleViewingForm({
 
       <button
         type="submit"
-        className="mt-6 inline-flex items-center justify-center rounded-sm bg-[#C4A962] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41]"
+        className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-[#102033] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#2E4A6B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41] sm:w-auto"
       >
         Request Viewing
       </button>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import ContactAgentModal from "@/components/property/ContactAgentModal";
 import type { Property } from "@/types/property";
 
 type AgentCardProps = {
@@ -9,7 +10,6 @@ type AgentCardProps = {
 
 export default function AgentCard({ property }: AgentCardProps) {
   const phoneHref = `tel:${property.agent.phone.replace(/[^0-9+]/g, "")}`;
-  const contactHref = `/contact?property=${property.id}`;
   const scheduleHref = `/contact?property=${property.id}&intent=schedule-viewing`;
 
   return (
@@ -20,10 +20,12 @@ export default function AgentCard({ property }: AgentCardProps) {
 
       <div className="mt-5 flex items-center gap-4">
         <div className="relative h-16 w-16 overflow-hidden rounded-full bg-[#E8DCC4]/40">
+          {/* The agent portrait is informational rather than critical, so it can defer loading without affecting the page layout. */}
           <Image
             src={property.agent.photo}
             alt={property.agent.name}
             fill
+            loading="lazy"
             unoptimized
             sizes="64px"
             className="object-cover"
@@ -61,12 +63,7 @@ export default function AgentCard({ property }: AgentCardProps) {
       </dl>
 
       <div className="mt-8 flex flex-col gap-3">
-        <Link
-          href={contactHref}
-          className="inline-flex items-center justify-center rounded-sm bg-[#C4A962] px-5 py-3 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41]"
-        >
-          Contact Agent
-        </Link>
+        <ContactAgentModal property={property} />
         <Link
           href={scheduleHref}
           className="inline-flex items-center justify-center rounded-sm border border-[#E8DCC4]/80 bg-[#FAFAF8] px-5 py-3 text-sm font-semibold uppercase tracking-wide text-[#3D4F63] transition-colors hover:border-[#C4A962] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"

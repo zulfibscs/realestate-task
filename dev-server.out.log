@@ -1,0 +1,38 @@
+
+> realestate-task@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.100.11:3000
+✓ Ready in 5.8s
+✓ Running next.config.ts took 272ms
+Creating turbopack project {
+  dir: 'C:\\Users\\Zulfiqar Ali\\OneDrive\\Desktop\\realestate-task',
+  testMode: true
+}
+
+○ Compiling / ...
+ GET / 200 in 15.5s (next.js: 12.5s, application-code: 3.0s)
+○ Compiling /_error ...
+ GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1564013799919-ab600027ffc6%3Fw%3D1920%26h%3D1280%26fit%3Dcrop&w=1920&q=75 500 in 9.3s (next.js: 9.2s, application-code: 117ms)
+ GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1564013799919-ab600027ffc6%3Fw%3D1920%26h%3D1280%26fit%3Dcrop&w=1920&q=75 500 in 9.3s (next.js: 9.2s, application-code: 118ms)
+ GET / 200 in 4.1s (next.js: 705ms, application-code: 3.4s)
+ GET /contact 200 in 3.2s (next.js: 3.0s, application-code: 213ms)
+ GET / 200 in 168ms (next.js: 18ms, application-code: 150ms)
+○ Compiling /properties ...
+ GET /properties 200 in 9.2s (next.js: 9.1s, application-code: 104ms)
+✓ Finished writing to filesystem cache in 31.9s
+○ Compiling /properties/[id] ...
+ GET /properties/prop-014 200 in 6.8s (next.js: 3.7s, generate-params: 2.7s, application-code: 413ms)
+ GET /properties/prop-013 200 in 2.9s (next.js: 27ms, generate-params: 2.6s, application-code: 300ms)
+ GET /properties/prop-014 200 in 220ms (next.js: 25ms, generate-params: 18ms, application-code: 176ms)
+ GET /properties/prop-014 200 in 460ms (next.js: 58ms, generate-params: 0.1ms, application-code: 402ms)
+ GET /properties/prop-014 200 in 479ms (next.js: 280ms, generate-params: 0.1ms, application-code: 199ms)
+ GET / 200 in 168ms (next.js: 15ms, application-code: 153ms)
+ GET / 200 in 323ms (next.js: 34ms, application-code: 289ms)
+ GET /properties 200 in 66ms (next.js: 15ms, application-code: 51ms)
+ GET / 200 in 87ms (next.js: 14ms, application-code: 73ms)
+ GET /properties 200 in 67ms (next.js: 15ms, application-code: 52ms)
+ GET /properties 200 in 466ms (next.js: 21ms, application-code: 445ms)
+[?25h

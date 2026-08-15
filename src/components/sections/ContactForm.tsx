@@ -6,6 +6,7 @@ type ContactFormState = {
   name: string;
   email: string;
   phone: string;
+  interest: string;
   message: string;
 };
 
@@ -15,13 +16,14 @@ const initialState: ContactFormState = {
   name: "",
   email: "",
   phone: "",
+  interest: "buying",
   message: "",
 };
 
 const fieldClassName =
-  "w-full rounded-sm border border-[#E8DCC4]/80 bg-white px-3 py-2.5 text-sm text-[#2C2C2C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]";
+  "w-full rounded-sm border border-[#D9D0BC] bg-white px-4 py-3 text-sm text-[#2C2C2C] shadow-sm outline-none transition-colors placeholder:text-[#8A8F98] focus:border-[#102033] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]";
 
-const labelClassName = "mb-1.5 block text-sm font-medium text-[#1B2A41]";
+const labelClassName = "mb-2 block text-sm font-semibold text-[#102033]";
 
 function validateEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -102,12 +104,24 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-sm border border-[#E8DCC4]/60 bg-white p-6"
+      className="rounded-sm border border-[#E8DCC4]/70 bg-white p-5 shadow-[0_18px_60px_rgba(16,32,51,0.08)] sm:p-7"
     >
+      <div className="mb-7 border-b border-[#E8DCC4]/70 pb-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#8A8572]">
+          Send a Message
+        </p>
+        <h2 className="mt-2 font-serif text-3xl font-semibold text-[#102033]">
+          Tell me what you are planning.
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-[#3D4F63]">
+          Share a few details and I will reply with clear next steps.
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-name" className={labelClassName}>
-            Name
+            Full name
           </label>
           <input
             ref={nameRef}
@@ -172,6 +186,25 @@ export default function ContactForm() {
         </div>
 
         <div className="sm:col-span-2">
+          <label htmlFor="contact-interest" className={labelClassName}>
+            I am interested in
+          </label>
+          <select
+            id="contact-interest"
+            name="interest"
+            value={formState.interest}
+            onChange={(event) => updateField("interest", event.target.value)}
+            className={fieldClassName}
+          >
+            <option value="buying">Buying a home</option>
+            <option value="selling">Selling a home</option>
+            <option value="valuation">Home valuation</option>
+            <option value="relocation">Relocation guidance</option>
+            <option value="general">General question</option>
+          </select>
+        </div>
+
+        <div className="sm:col-span-2">
           <label htmlFor="contact-message" className={labelClassName}>
             Message
           </label>
@@ -179,7 +212,7 @@ export default function ContactForm() {
             ref={messageRef}
             id="contact-message"
             name="message"
-            rows={5}
+            rows={6}
             value={formState.message}
             onChange={(event) => updateField("message", event.target.value)}
             aria-invalid={errors.message ? "true" : "false"}
@@ -188,6 +221,10 @@ export default function ContactForm() {
             }
             className={fieldClassName}
           />
+          <p className="mt-2 text-xs text-[#6B7280]">
+            A short note is enough. Include neighborhoods, timing, or budget if
+            helpful.
+          </p>
           {errors.message ? (
             <p id="contact-message-error" className="mt-2 text-sm text-red-700">
               {errors.message}
@@ -198,7 +235,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="mt-6 inline-flex items-center justify-center rounded-sm bg-[#C4A962] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#1B2A41] transition-colors hover:bg-[#E8DCC4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41]"
+        className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-[#102033] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#2E4A6B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B2A41] sm:w-auto"
       >
         Send Message
       </button>

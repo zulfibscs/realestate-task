@@ -50,10 +50,12 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
                 src={image}
                 alt={`${title} thumbnail ${index + 1}`}
                 fill
+                // Gallery thumbnails are secondary content, so they stay lazy-loaded and do not compete with the main hero image.
+                loading="lazy"
                 unoptimized
                 sizes="(max-width: 1024px) 33vw, 18vw"
-                className="object-cover"
-              />
+                  className="object-cover"
+                />
             </button>
           );
         })}

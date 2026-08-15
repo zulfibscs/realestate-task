@@ -87,16 +87,18 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
 
       {isOpen ? (
         <>
-            <button
-              type="button"
-              aria-label="Close menu overlay"
-              className="fixed inset-0 top-16 z-40 bg-[#2C2C2C]/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
-              onClick={closeMenu}
-            />
+          <button
+            type="button"
+            aria-label="Close menu overlay"
+            // The banner plus header occupy 108px, so the overlay starts below both fixed bars and still blocks page interaction.
+            className="fixed inset-0 top-[108px] z-40 bg-[#2C2C2C]/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4A962]"
+            onClick={closeMenu}
+          />
           <nav
             id={menuId}
             aria-label="Mobile navigation"
-            className="fixed inset-x-0 top-16 z-50 border-b border-[#E8DCC4]/30 bg-[#1B2A41] px-4 py-6 shadow-lg sm:px-6"
+            // Matching the overlay offset keeps the menu aligned under the 44px banner and 64px header stack.
+            className="fixed inset-x-0 top-[108px] z-50 border-b border-[#E8DCC4]/30 bg-[#1B2A41] px-4 py-6 shadow-lg sm:px-6"
           >
             <ul className="flex flex-col gap-1">
               {navLinks.map(({ href, label }) => (
@@ -112,6 +114,12 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
               ))}
             </ul>
             <div className="mt-6 border-t border-[#E8DCC4]/20 pt-6">
+              <a
+                href="tel:+14783717069"
+                className="mb-3 block rounded-sm px-3 py-3 text-base font-semibold text-white"
+              >
+                (478) 371-7069
+              </a>
               <Link
                 href="/contact"
                 onClick={closeMenu}

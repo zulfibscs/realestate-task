@@ -1,0 +1,12 @@
+
+> realestate-task@0.1.0 dev
+> next dev --webpack --port 3002
+
+▲ Next.js 16.3.1 (webpack)
+- Local:         http://localhost:3002
+- Network:       http://192.168.100.11:3002
+✓ Ready in 3.2s
+✓ Running next.config.ts took 112ms
+
+○ Compiling /listings ...
+ GET /listings 200 in 18.8s (next.js: 16.8s, application-code: 1981ms)
