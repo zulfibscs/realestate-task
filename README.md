@@ -20,7 +20,6 @@ The design is inspired by Walton Dean Realty, but the implementation is original
 - Next.js 16 App Router
 - TypeScript
 - Tailwind CSS
-- Vercel deployment target
 
 ## Folder Structure
 
